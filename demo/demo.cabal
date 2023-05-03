@@ -1,0 +1,23 @@
+cabal-version: 3.0
+
+name: demo
+version: 0
+
+common base
+    default-language: GHC2021
+    default-extensions: AllowAmbiguousTypes BlockArguments DerivingStrategies LambdaCase NoImplicitPrelude OverloadedStrings TypeFamilies UndecidableInstances
+    build-depends: base, containers, mtl, relude, text, vector
+
+library
+    import: base
+    hs-source-dirs: library
+    exposed-modules: LowLevel HighLevel Real
+    build-depends: vulkan
+
+test-suite test-demo
+    import: base
+    type: exitcode-stdio-1.0
+    hs-source-dirs: test
+    main-is: Main.hs
+    other-modules: Fake
+    build-depends: demo, hspec
