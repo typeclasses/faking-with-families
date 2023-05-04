@@ -3,7 +3,6 @@ module LowLevel where
 import Relude
 
 import Data.Vector (Vector)
-import Data.Word (Word32)
 
 class (Monad m) => Vulkan v m where
 

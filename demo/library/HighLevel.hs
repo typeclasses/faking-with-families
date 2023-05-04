@@ -3,7 +3,6 @@ module HighLevel (Device (..), QueueSpecification (..), createDevice) where
 import Relude
 
 import Data.Vector (Vector)
-import System.IO (IO)
 import Data.Map.Strict qualified as Map
 import Data.Sequence qualified as Seq
 
@@ -25,7 +24,7 @@ createDevice gpu queueSpecifications = do
 
 newtype Builder v = Builder (Map (VkFamily v) (Seq (VkPriority v)))
 
-makeVkQueueSpecifications :: forall v m q. (Ord (VkFamily v), Traversable q) =>
+makeVkQueueSpecifications :: forall v q. (Ord (VkFamily v), Traversable q) =>
     q (QueueSpecification v) -> (q (VkQueueId v), Vector (VkQueueFamilySpecification v))
 makeVkQueueSpecifications specs = flip evalState (Builder Map.empty) do
     queueIdentifiers <- traverse add specs

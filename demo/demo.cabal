@@ -5,6 +5,7 @@ version: 0
 
 common base
     default-language: GHC2021
+    ghc-options: -Wall
     default-extensions: AllowAmbiguousTypes BlockArguments DerivingStrategies LambdaCase NoImplicitPrelude OverloadedStrings TypeFamilies UndecidableInstances
     build-depends: base, containers, mtl, relude, text, vector
 

@@ -2,9 +2,6 @@ module Real where
 
 import Relude hiding (Real)
 
-import Data.Vector (Vector)
-import Data.Word (Word32)
-
 import Vulkan qualified
 import Vulkan.Zero (zero)
 import Vulkan.CStruct.Extends (SomeStruct (SomeStruct))

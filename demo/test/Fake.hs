@@ -2,14 +2,11 @@ module Fake where
 
 import Relude
 
-import Data.Vector (Vector)
 import Data.Vector qualified as Vector
 import Data.Map.Strict qualified as Map
 
 import LowLevel
 import HighLevel
-
-import Test.Hspec (hspec, shouldBe, specify)
 
 data Fake
 

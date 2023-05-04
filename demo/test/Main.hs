@@ -2,11 +2,6 @@ module Main (main) where
 
 import Relude
 
-import Data.Vector (Vector)
-import Data.Vector qualified as Vector
-import Data.Map.Strict qualified as Map
-
-import LowLevel
 import HighLevel
 import Fake
 
@@ -22,6 +17,7 @@ qSpec = Q
   , q3 = QueueSpecification "graphics" (2/3)
   }
 
+main :: IO ()
 main = hspec do
   specify "createDevice" do
     Device _ qs <- createDevice @Fake () qSpec
